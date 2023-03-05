@@ -1,14 +1,14 @@
 package com.admobile.spring.dao;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
+import org.springframework.context.annotation.Primary;
+//import org.springframework.data.jpa.repository.JpaRepository;
+//import org.springframework.data.jpa.repository.Query;
 
-import com.admobile.spring.entity.Message;
+import org.apache.ibatis.annotations.Select;
 
-@Repository
-public interface MessageUmbbcDAO extends JpaRepository<Message,Integer>{
+@Primary
+public interface MessageUmbbcDAO{
 
-	@Query(value="SELECT value FROM mesaage WHERE config = ?1", nativeQuery=true)
+	@Select("SELECT value FROM mesaage WHERE config = #{param}")
 	public String selectMessageValue(String param);
 }

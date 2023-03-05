@@ -1,3 +1,4 @@
+/*
 package com.admobile.spring.entity;
 
 import javax.persistence.Column;
@@ -22,3 +23,4 @@ public class Message {
     @Column(nullable = false)
     private String config;
 }
+*/
